@@ -1,7 +1,7 @@
 _This project was created for module 4 of the EdX Skills for Life Front End Development bootcamp. In this challenge, we were tasked with calculating some finances in the console log from a 2-dimensional array._
 
 
-# Console Finances
+# Finance Dashboard
 
 ## Description
 
