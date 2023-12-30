@@ -87,9 +87,6 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-
-
-
 // ----------TOTAL----------
 let total = 0; // initialise the TOTAL variable
 
@@ -100,11 +97,8 @@ for (let index = 0; index < finances.length; index++) {
   total += monthlyNet;
 }
 
-
-
-
 // ----------AVERAGE CHANGE----------
-// Calculate the change for each month. This is index 2-1, 3-2, 4-3... add them all together... divide them by the finances.length.
+// Calculate the change for each month. This is index 2 subtract index 1, index 3 subtract index 2, index 4 subtract index 3... add them all together... divide them by the finances.length to get the average
 let totalChanges = 0; // Initialise total changes variable
 
 for (let index = 1; index < finances.length; index++) {
@@ -114,46 +108,33 @@ for (let index = 1; index < finances.length; index++) {
 }
 
 let averageChange = totalChanges / (finances.length - 1);
-averageChange = averageChange.toFixed(2); // Rounds the number up to 2 decimal places. Unfortunately, this converts the variable typeof to a string.
-// we have to convert it back to a number so that the toLocaleString() method works and it puts commas every thousand e.g. 2,000 instead of 2000.
-averageChange = parseFloat(averageChange);
-
-
-
+averageChange = averageChange.toFixed(2); // Rounds the number up to 2 decimal places. Unfortunately, this converts the variable typeof to a string, so... 
+averageChange = parseFloat(averageChange); // ...we have to convert it back to a number so that the toLocaleString() method works and it puts commas every thousand e.g. 2,000 instead of 2000 for ease of reading. 
 
 // ----------GREATEST INCREASE & DECREASE IN PROFIT (DATE AND AMOUNT)----------
-// Initialise the variables 
-let testArray = [
-  ["Jan", 10],
-  ["Feb", 50],
-  ["Mar", 200],
-  ["April", -100],
-];
-
+// Initialise the variables
 let greatestIncrease = 0;
 let greatestIncreaseMonth = "";
 let greatestDecrease = 0;
 let greatestDecreaseMonth = "";
-let monthlyChange = 0
-
+let monthlyChange = 0;
 
 for (let index = 1; index < finances.length; index++) {
-    let monthlyChange = finances[index][1] - finances[index - 1][1]; // Take the month it's currently on, subtract the previous month (index - 1) to define the current monthlyChange
-    
-        if (monthlyChange > greatestIncrease) {  // if *this* monthlyChange ("this month that we're looping at now") is greater than the greatest increase (it always will be if it's zero because we initialised it at zero)
-            greatestIncrease = monthlyChange; // set the greatestIncrease to this new monthlyChange figure... and...
-            greatestIncreaseMonth = finances[index][0]; // set the greatestIncreaseMonth to the index we're looping on now (by number) and then the first index inside of that (which in thise case is always the name of the month!)
-        } 
+  let monthlyChange = finances[index][1] - finances[index - 1][1]; // Take the month it's currently on, subtract the previous month (index - 1) to define the current monthlyChange
 
-        if (monthlyChange < greatestDecrease) { 
-          greatestDecrease = monthlyChange;
-          greatestDecreaseMonth = finances[index][0]; 
-        }
-        // Because the loop loops infinitely and goes through all available values from the second month (index 1), it will always find the biggest value.
-        // It starts with a monthlyCahnge. It checks the value of index[1]. If it's this value is bigger than what it's currently got, it replaces it. If not, it moves on. So on and so forth. 
-
+  if (monthlyChange > greatestIncrease) {
+    // if *this* monthlyChange (this month that we're looping at now) is greater than the greatestIncrease (remember, we defined it as zero in initiation)...
+    greatestIncrease = monthlyChange; // ...set the greatestIncrease to this new monthlyChange figure... and...
+    greatestIncreaseMonth = finances[index][0]; // set the greatestIncreaseMonth to the index we're looping on now (by number) and then the first index inside of that (which in thise case is always the name of the month!)
   }
 
+  if (monthlyChange < greatestDecrease) {
+    greatestDecrease = monthlyChange;
+    greatestDecreaseMonth = finances[index][0];
+  }
+  // Because the loop loops infinitely and goes through all available values from the second month (index 1), it will always find the biggest value.
+  // It starts with a monthlyCahnge. It checks the value of index[1]. If it's this value is bigger than what it's currently got, it replaces it. If not, it moves on. So on and so forth.
+}
 
 // CONSOLE LOG
 console.log(
@@ -166,7 +147,16 @@ console.log(
     total.toLocaleString() +
     "\n" + // I added the toLocaleString method to make the numbers easier to read
     "Average Change: $" +
-    averageChange.toLocaleString() + "\n" +
-    "Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")\n" +
-    "Greatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")"
+    averageChange.toLocaleString() +
+    "\n" +
+    "Greatest Increase in Profits/Losses: " +
+    greatestIncreaseMonth +
+    " ($" +
+    greatestIncrease.toLocaleString() +
+    ")\n" +
+    "Greatest Decrease in Profits/Losses: " +
+    greatestDecreaseMonth +
+    " ($" +
+    greatestDecrease.toLocaleString() +
+    ")"
 );
