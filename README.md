@@ -46,17 +46,13 @@ If you want to work on the software locally, here is one way of doing it
 
 ## Usage
 
-Functionality is limited on the website, it mostly just displays information. The nav bar does contain five links: one is the logo which just redirects to the homepage. This will only be useful in future if other pages are added and the nav bar is updated. The other four links in the nav bar are internal anchor tags that scroll the relevant section on the homepage. 
-
-Here is a screenshot of the live website: 
-        ![Screen capture of the live website](images/portfolio-screen-capture.png)
+There isn't really any functionality on this website. It mostly exists to showcase my JavaScript code which you can look at inside the index.js file and see the output in the Console Log of your browser.
 
 
 ## Credits
 
 Thank you to EdX Skills for Life team including Abdul and all of the TAs for their support so far. 
 
-Thank you to https://realfavicongenerator.net/ for guidance on creating a favicon and for converting my image into multiple favicon files. 
 
 ## License
 
