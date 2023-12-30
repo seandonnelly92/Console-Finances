@@ -88,6 +88,8 @@ var finances = [
 ];
 
 
+// TOTAL 
+
 let total = 0; // initialise the TOTAL variable
 
 for (let index = 0; index < finances.length; index++) // Loop through each sub-array... define the sub-array (NB initialise variable, condition, update)
@@ -96,16 +98,21 @@ for (let index = 0; index < finances.length; index++) // Loop through each sub-a
     total += monthlyNet;
 }
 
-console.log(total);
+// AVERAGE CHANGE
 
+// Calculate the change for each month. This is index 2-1, 3-2, 4-3... add them all together... divide them by the finances.length. 
 
+let totalChanges = 0; // Initialise total changes variable 
+let averageChange = totalChanges/finances.length; // Initialise averageChange variable and set dynamic value formula 
+
+// CONSOLE LOG
 
 console.log(
 "Financial Analysis \n" +
 "----------------\n" +
 "Total Months: " + finances.length + "\n" +
 "Total: $" + total.toLocaleString() + "\n" + // I added the toLocaleString method to make the numbers easier to read 
-"Average Change: " + "xxx" + "\n" +
+"Average Change: $" + averageChange.toLocaleString() + "\n" +
 "Greatest Increase in Profits/Losses: " + "xxx" + "\n" +
 "Greatest Decrease in Profits/Losses: " + "xxx" + "\n"
 )
