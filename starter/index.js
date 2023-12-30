@@ -104,7 +104,7 @@ console.log(
 "Financial Analysis \n" +
 "----------------\n" +
 "Total Months: " + finances.length + "\n" +
-"Total: $" + total.toLocaleString() + "\n" + // I added the toLocaleString method to make the numbers easier to read
+"Total: $" + total.toLocaleString() + "\n" + // I added the toLocaleString method to make the numbers easier to read 
 "Average Change: " + "xxx" + "\n" +
 "Greatest Increase in Profits/Losses: " + "xxx" + "\n" +
 "Greatest Decrease in Profits/Losses: " + "xxx" + "\n"
