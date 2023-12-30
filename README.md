@@ -1,5 +1,3 @@
-
-
 _This project was created for module 4 of the EdX Skills for Life Front End Development bootcamp. In this challenge, we were tasked with calculating some finances in the console log from a 2-dimensional array._
 
 
@@ -11,7 +9,7 @@ If you open the console log in browser, it pulls out information from an array c
 
 I found this challenge to be the hardest so far but it has definitely been rewarding to get to grips with JS logic. 
 
-**Here is the published website URL:** https://seandonnelly92.github.io/Console-Finances/
+**Here is the published website URL:** https://seandonnelly92.github.io/Finance-Dashboard/
 
 
 ## Table of Contents (Optional)
@@ -26,11 +24,11 @@ If your README is long, add a table of contents to make it easy for users to fin
 ## Installation
 
 
-You can see the live website by visting https://seandonnelly92.github.io/Console-Finances/
+You can see the live website by visting https://seandonnelly92.github.io/Finance-Dashboard/
 
 If you want to work on the software locally, here is one way of doing it
 
-1. Go to https://github.com/seandonnelly92/Console-Finances/ 
+1. Go to https://github.com/seandonnelly92/Finance-Dashboard/ 
 2. Download the code repository by clicking the green 'Code' button and then 'Download Zip' as shown here
 
     ![GIF showing how to download the code repository from GitHub](images/download-repository.gif)
