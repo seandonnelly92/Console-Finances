@@ -138,25 +138,12 @@ for (let index = 1; index < finances.length; index++) {
 
 // CONSOLE LOG
 console.log(
-  "Financial Analysis \n" +
-    "----------------\n" +
-    "Total Months: " +
-    finances.length +
-    "\n" +
-    "Total: $" +
-    total.toLocaleString() +
-    "\n" + // I added the toLocaleString method to make the numbers easier to read
-    "Average Change: $" +
-    averageChange.toLocaleString() +
-    "\n" +
-    "Greatest Increase in Profits/Losses: " +
-    greatestIncreaseMonth +
-    " ($" +
-    greatestIncrease.toLocaleString() +
-    ")\n" +
-    "Greatest Decrease in Profits/Losses: " +
-    greatestDecreaseMonth +
-    " ($" +
-    greatestDecrease.toLocaleString() +
-    ")"
-);
+`Financial Analysis
+----------------------------
+Total Months: ${finances.length}
+Total: $${total.toLocaleString()}
+Average Change: $${averageChange.toLocaleString()}
+Greatest Increase in Profits/Losses: ${greatestIncreaseMonth} ($${greatestIncrease.toLocaleString()})
+Greatest Decrease in Profits/Losses: ${greatestDecreaseMonth} ($${greatestDecrease.toLocaleString()})
+`
+)
