@@ -127,39 +127,32 @@ let testArray = [
   ["Jan", 10],
   ["Feb", 50],
   ["Mar", 200],
-  ["April", 100],
+  ["April", -100],
 ];
 
 let greatestIncrease = 0;
 let greatestIncreaseMonth = "";
 let greatestDecrease = 0;
 let greatestDecreaseMonth = "";
-let previousNet = testArray[0][1]; // Initialize with the profit of the first month - think this is breaking it 
 let monthlyChange = 0
 
 
-for (let index = 1; index < testArray.length; index++) {
-    let monthlyChange = testArray[index][1] - testArray[index - 1][1]; // Take previous net away from current to get this month's change
+for (let index = 1; index < finances.length; index++) {
+    let monthlyChange = finances[index][1] - finances[index - 1][1]; // Take the month it's currently on, subtract the previous month (index - 1) to define the current monthlyChange
     
         if (monthlyChange > greatestIncrease) {  // if *this* monthlyChange ("this month that we're looping at now") is greater than the greatest increase (it always will be if it's zero because we initialised it at zero)
             greatestIncrease = monthlyChange; // set the greatestIncrease to this new monthlyChange figure... and...
-            greatestIncreaseMonth = testArray[index][0]; // set the greatestIncreaseMonth to the index we're looping on now (by number) and then the first index inside of that (which in thise case is always the name of the month!)
+            greatestIncreaseMonth = finances[index][0]; // set the greatestIncreaseMonth to the index we're looping on now (by number) and then the first index inside of that (which in thise case is always the name of the month!)
         } 
 
         if (monthlyChange < greatestDecrease) { 
           greatestDecrease = monthlyChange;
-          greatestDecreaseMonth = testArray[index][0]; 
+          greatestDecreaseMonth = finances[index][0]; 
         }
-        previousNet = testArray[index][1] - testArray[index - 1][1];     // update the previousNet for the next loop
-        // Because this loop loop infinitly and goes through all available values from the second month (index 1), it will always find the biggest value.
-        // It starts with a previousNet. Checks the value of index[1]. If it's this value is bigger than what it's currently got, it replaces it. If not, it moves on. So on and so forth. 
+        // Because the loop loops infinitely and goes through all available values from the second month (index 1), it will always find the biggest value.
+        // It starts with a monthlyCahnge. It checks the value of index[1]. If it's this value is bigger than what it's currently got, it replaces it. If not, it moves on. So on and so forth. 
 
   }
-
-  
-
-// Log the result
-console.log(`Greatest Increase in Profit: ${greatestIncreaseMonth}, ${greatestIncrease}`);
 
 
 // CONSOLE LOG
@@ -177,17 +170,3 @@ console.log(
     "Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")\n" +
     "Greatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")"
 );
-
-
-/* 
-
-Financial Analysis 
-----------------
-Total Months: 86
-Total: $38382578
-Average Change: -2315.12
-Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-Your final code should print the analysis to the console.
-
-*/
