@@ -103,16 +103,25 @@ for (let index = 0; index < finances.length; index++) // Loop through each sub-a
 // Calculate the change for each month. This is index 2-1, 3-2, 4-3... add them all together... divide them by the finances.length. 
 
 let totalChanges = 0; // Initialise total changes variable 
-let averageChange = totalChanges/finances.length; // Initialise averageChange variable and set dynamic value formula 
+
+for (let index = 1; index < finances.length; index++) {  // I had to start at index 1 instead of 0 because the next line's logic index-1. When it tried to index '0-1', it failed. 
+  let monthlyChange = finances[index][1] - finances[index - 1][1];
+  totalChanges += monthlyChange;
+}
+
+let averageChange = totalChanges/(finances.length - 1);
+averageChange = averageChange.toLocaleString();
+averageChange = averageChange.toFixed(2) // Rounds the number up to 2 decimal places 
+
+console.log("total changes: " + totalChanges)
 
 // CONSOLE LOG
-
 console.log(
 "Financial Analysis \n" +
 "----------------\n" +
 "Total Months: " + finances.length + "\n" +
 "Total: $" + total.toLocaleString() + "\n" + // I added the toLocaleString method to make the numbers easier to read 
-"Average Change: $" + averageChange.toLocaleString() + "\n" +
+"Average Change: $" + averageChange + "\n" +
 "Greatest Increase in Profits/Losses: " + "xxx" + "\n" +
 "Greatest Decrease in Profits/Losses: " + "xxx" + "\n"
 )
